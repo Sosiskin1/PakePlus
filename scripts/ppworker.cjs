@@ -182,12 +182,12 @@ const updateInitRs = (isHtml, startMethod, winState, winConfig) => {
     const initRs = fs.readFileSync(initRsPath, 'utf-8')
     winConfig.label = 'main'
     winConfig.visible = false
-    if (isHtml) {
-        winConfig.url = 'index.html'
-    } else if (startMethod === 'password') {
+    if (startMethod === 'password') {
         winConfig.url = 'pppwd.html'
     } else if (startMethod === 'oncePwd') {
         winConfig.url = 'pppwd.html'
+    } else if (isHtml) {
+        winConfig.url = 'index.html'
     } else {
         console.log('use winConfig url')
     }
